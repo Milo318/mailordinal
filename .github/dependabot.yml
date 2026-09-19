@@ -10,6 +10,17 @@ updates:
         dependency-type: production
       tooling:
         dependency-type: development
+    ignore:
+      # Adopt toolchain majors deliberately once Next.js and typescript-eslint
+      # declare compatible support; Dependabot still proposes minor/patch fixes.
+      - dependency-name: typescript
+        update-types: ["version-update:semver-major"]
+      - dependency-name: eslint
+        update-types: ["version-update:semver-major"]
+      - dependency-name: vitest
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@vitest/coverage-v8"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
