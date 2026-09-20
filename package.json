@@ -16,6 +16,9 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "benchmark": "tsx scripts/benchmark.ts --providers=rules",
+    "benchmark:live": "tsx scripts/benchmark.ts --providers=rules,jev,llm",
+    "benchmark:report": "tsx scripts/benchmark-report.ts",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "quality": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build"
@@ -35,6 +38,7 @@
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.5",
     "prettier": "^3.9.8",
+    "tsx": "^4.20.6",
     "typescript": "^6.0.3",
     "vitest": "^4.1.11"
   }

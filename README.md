@@ -2,6 +2,8 @@
 
 **A decision-native enterprise inbox. Typed model signals in; deterministic queue order out.**
 
+![MailOrdinal benchmark cover](./docs/assets/mailordinal-benchmark-cover.png)
+
 MailOrdinal is an open-source reference implementation for a new kind of software:
 **probabilistic selection systems**. Instead of asking an AI model to produce a final,
 opaque priority label, MailOrdinal decomposes an inbound email into atomic judgments and
@@ -96,6 +98,22 @@ The request contract lives in
 [`src/lib/jev/provider.ts`](./src/lib/jev/provider.ts). No API key or provider call exists in
 browser code.
 
+## Verified 200-case benchmark
+
+The repository includes a fixed, pre-labelled corpus spanning clear, ambiguous,
+follow-up, critical, and adversarial enterprise emails. Every provider emits the same nine
+signals and is evaluated through the same deterministic priority policy.
+
+| Provider            |   Routing | Reply duty | Action duty | Priority MAE |
+| ------------------- | --------: | ---------: | ----------: | -----------: |
+| Deterministic rules |     60.5% |      62.0% |       58.5% |        19.01 |
+| General 3B LLM      |     77.5% |      24.0% |       84.0% |        13.03 |
+| **Jev 1.13**        | **97.0%** | **100.0%** |   **95.0%** |     **9.22** |
+
+These are measured results for this synthetic repository benchmark—not a universal model
+claim. See the complete [methodology and limitations](./docs/BENCHMARK.md) and the
+[machine-readable result](./docs/benchmark-results.json).
+
 ## Run locally
 
 Requirements:
@@ -173,6 +191,7 @@ Read the deeper documents:
 - [System architecture](./docs/ARCHITECTURE.md)
 - [Priority and review policy](./docs/DECISION_POLICY.md)
 - [Jev integration contract](./docs/JEV_INTEGRATION.md)
+- [200-case benchmark](./docs/BENCHMARK.md)
 - [Security and privacy model](./docs/SECURITY_AND_PRIVACY.md)
 
 ## Production posture

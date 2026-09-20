@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-09-20T12:39:45.656Z",
+  "corpus": {
+    "cases": 200,
+    "synthetic": true,
+    "segments": {
+      "clear": 80,
+      "ambiguous": 50,
+      "follow_up": 30,
+      "critical": 20,
+      "stress": 20
+    }
+  },
+  "providers": {
+    "rules": "Deterministic keyword/regex baseline (rules-v1)",
+    "llm": "General-purpose local 3B instruct model (granite4.1:3b)",
+    "jev": "TypeSafe System One model (jev-1.13.0)"
+  },
+  "reports": [
+    {
+      "provider": "rules",
+      "cases": 200,
+      "failures": 0,
+      "departmentAccuracy": 0.605,
+      "replyAccuracy": 0.62,
+      "actionAccuracy": 0.585,
+      "messageTypeAccuracy": 0.645,
+      "blockedAccuracy": 0.74,
+      "followUpAccuracy": 0.99,
+      "timeWindowAccuracy": 0.855,
+      "sensitivityAccuracy": 0.645,
+      "delayImpactMae": 0.41,
+      "priorityMae": 19.01,
+      "criticalFalseNegatives": 40,
+      "top20Recall": 0.5,
+      "binaryBrierScore": 0.26625,
+      "meanLatencyMs": 0.016876034999999304,
+      "inputTokens": 0,
+      "outputTokens": 0
+    },
+    {
+      "provider": "llm",
+      "cases": 200,
+      "failures": 0,
+      "departmentAccuracy": 0.775,
+      "replyAccuracy": 0.24,
+      "actionAccuracy": 0.84,
+      "messageTypeAccuracy": 0.565,
+      "blockedAccuracy": 0.77,
+      "followUpAccuracy": 0.95,
+      "timeWindowAccuracy": 0.13,
+      "sensitivityAccuracy": 0.665,
+      "delayImpactMae": 0.385,
+      "priorityMae": 13.025,
+      "criticalFalseNegatives": 28,
+      "top20Recall": 0.75,
+      "binaryBrierScore": 0.3,
+      "meanLatencyMs": 18502.56768224001,
+      "inputTokens": 204572,
+      "outputTokens": 15012
+    },
+    {
+      "provider": "jev",
+      "cases": 200,
+      "failures": 0,
+      "departmentAccuracy": 0.97,
+      "replyAccuracy": 1,
+      "actionAccuracy": 0.95,
+      "messageTypeAccuracy": 0.825,
+      "blockedAccuracy": 0.83,
+      "followUpAccuracy": 0.95,
+      "timeWindowAccuracy": 0.485,
+      "sensitivityAccuracy": 0.745,
+      "delayImpactMae": 0.28905000000000014,
+      "priorityMae": 9.22,
+      "criticalFalseNegatives": 22,
+      "top20Recall": 0.7,
+      "binaryBrierScore": 0.05802112500000013,
+      "meanLatencyMs": 313.7645424999999,
+      "inputTokens": 300080,
+      "outputTokens": 65263
+    }
+  ]
+}
